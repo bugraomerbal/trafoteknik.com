@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title data-lang-key="urunler_title">Tüm Ürünler - Trafo Teknik</title>
+   <script defer src="language.js"></script>
+   <script defer src="language_selector_functionality.js"></script>
+   <script defer src="script.js"></script>
+
+</head>
+<body class="urunler-page">
+   <!-- Sabit Navigasyon Menüsü -->
+   <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.png" alt="Trafo Teknik Logo">
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+      <nav class="menu">
+        <a href="index.html" data-lang-key="home">Ana Sayfa</a>
+        <a href="hakkimizda_multilingual.html" data-lang-key="about">Hakkımızda</a>
+        <a href="urunler_full_multilingual.html" data-lang-key="products">Ürünler</a>
+        <a href="isortakları-referanslar.html" data-lang-key="partnerships">İş Birlikleri</a>
+        <a href="isortakları-referanslar.html" data-lang-key="references">Referanslar</a>
+        <a href="iletisim_multilingual.html" data-lang-key="contact">İletişim</a>
+        <div class="language-selector">
+          <button class="lang-btn" data-lang="tr">
+            <img src="images/Flag_of_Turkey.svg.webp" alt="Türkçe">
+          </button>
+          <button class="lang-btn" data-lang="en">
+            <img src="images/Flag_of_the_United_Kingdom_(3-5).svg.png" alt="English">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+<div class="whatsapp-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 2000; font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+  <!-- Açılır Menü -->
+  <div class="whatsapp-menu" style="display: none; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <!-- Emirhan -->
+    <div class="whatsapp-contact" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+      <span style="font-size: 14px; margin-bottom: 5px;">1. Emirhan Arslan</span>
+      <a href="https://wa.me/905309606371?text=Merhaba%20Emirhan!" target="_blank" style="padding: 10px; background-color: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 12px; transition: background-color 0.3s ease;">Mesaj Gönder</a>
+    </div>
+    <!-- Murat -->
+    <div class="whatsapp-contact" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+      <span style="font-size: 14px; margin-bottom: 5px;">2. Murat Özen</span>
+      <a href="https://wa.me/905310812360?text=Merhaba%20Murat!" target="_blank" style="padding: 10px; background-color: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 12px; transition: background-color 0.3s ease;">Mesaj Gönder</a>
+    </div>
+  </div>
+
+  <!-- Ana buton (ikon ve yazı) -->
+  <div class="whatsapp-icon" onclick="toggleWhatsAppMenu()" style="display: flex; align-items: center; gap: 10px; background-color: #25d366; color: white; padding: 10px 15px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); cursor: pointer; transition: all 0.3s ease;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 24px; height: 24px;" />
+    <span style="font-size: 14px;">WhatsApp İletişim</span>
+  </div>
+</div>
+
+
+  <main>
+    <section class="urunler-ana-sayfa-intro">
+      <h1 class="urunler-ana-sayfa-title" data-lang-key="urunler_title">Tüm Ürünlerimiz</h1>
+      <p class="urunler-ana-sayfa-description" data-lang-key="urunler_intro">
+        <strong>Geniş Ürün Yelpazesi:</strong> Trafo aksesuarları, hammadde ve silisli sac ile enerji sistemlerinizin her türlü ihtiyacını karşılıyoruz.
+        <br>
+        <strong>Kalite ve Güven:</strong> Ürünlerimiz uluslararası standartlara uygun olarak üretilmektedir.
+      </p>
+    </section>
+
+    <section class="urunler-ana-sayfa-container">
+      <!-- 15 Ürün Kartı -->
+      <div class="urun-card">
+        <img src="images/silisli-sac.png" alt="Silisli Sac" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_silisli_sac">Silisli Sac</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_crgo_crngo">(CRGO & CRNGO)</p>
+        <a href="silisli-sac.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/hermetik (1).bmp" alt="Hermetik Koruma Rölesi" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_hermetik_koruma_role">Hermetik Koruma Rölesi</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_dgpt2">(DGPT2)</p>
+        <a href="hermetik-koruma-role.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/porselen-izolator.png" alt="Porselen İzolatör" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_porselen_izolator">Porselen İzolatör</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_porcelain_insulator">(Porcelain Insulator)</p>
+        <a href="porselen-izolator.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/aluminyum-bakir-tel.png" alt="Alüminyum-Bakır Tel" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_aluminyum_bakir_tel">Alüminyum-Bakır Tel</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_flat_round">(Flat and Round Wire)</p>
+        <a href="aluminyum-bakir-tel.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/izolasyon.png" alt="İzolasyon" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_izolasyon">İzolasyon</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_insulation">(Insulation)</p>
+        <a href="izolasyon.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/bas (1).bmp" alt="Ani Basınç Rölesi" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_ani_basin_role">Ani Basınç Rölesi</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_pressure_relay">(Rapid Pressure Rise Relay)</p>
+        <a href="ani-basin-role.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/terminalkutu (1).bmp" alt="Terminal Kutusu" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_terminal_kutusu">Terminal Kutusu</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_terminal_box">(Terminal Box)</p>
+        <a href="terminal-kutusu.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/radyotorvana (1).bmp" alt="Radyatör Vana" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_radyator_vana">Radyatör Vana</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_radiator_valve">(Radiator Valve)</p>
+        <a href="radyator-vana.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/yagbosaltma (1).bmp" alt="Yağ Boşaltma Vanası" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_yag_bosaltma_vanasi">Yağ Boşaltma Vanası</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_drain_valve">(Drain Valve)</p>
+        <a href="yag-bosaltma-vanasi.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/dalga-duvar-yag-tanki.png" alt="Dalga Duvar Yağ Tankı" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_dalga_duvar_yag_tanki">Dalga Duvar Yağ Tankı</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_corrugated_tank">(Corrugated Oil Tank)</p>
+        <a href="dalga-duvar-yag-tanki.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/trafo-kazani.png" alt="Trafo Kazanı" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_trafo_kazani">Trafo Kazanı</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_oil_tank">(Oil Tank)</p>
+        <a href="trafo-kazani.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/kelebek-vana.png" alt="Kelebek Vana" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_kelebek_vana">Vana</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_butterfly_valve">(Valve)</p>
+        <a href="kelebek-vana.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/manyetik7 (3).bmp" alt="Manyetik Yağ Seviye Göstergesi" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_manyetik_yag_seviye">Manyetik Yağ Seviye Göstergesi</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_magnetic_gauge">(Magnetic Oil Level Gauge)</p>
+        <a href="manyetik-yag-seviye.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/dikeyyag (1).bmp" alt="Dikey Yağ Seviye Göstergesi" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_dikey_yag_seviye">Dikey Yağ Seviye Göstergesi</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_vertical_gauge">(Vertical Liquid Level Indicator)</p>
+        <a href="dikey-yag-seviye.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+      <div class="urun-card">
+        <img src="images/basıncventilii (1).bmp" alt="Basınç Tahliye Cihazı" class="urun-image">
+        <h3 class="urun-title" data-lang-key="urunler_basinc_tahliye">Basınç Ventili</h3>
+        <p class="urun-subtitle" data-lang-key="urunler_pressure_relief">(Pressure Relief Device)</p>
+        <a href="basinc-tahliye-cihazi.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+        <img src="images/logo.png" alt="Trafo Teknik Logo" class="footer-logo">
+        <p class="footer-copyright" data-lang="footer.copyright">
+            Copyright © 2024 Trafo Teknik. Tüm haklar saklıdır.
+        </p>
+    </div>
+    <div class="footer-right">
+        <a href="privacy.html" class="footer-link" data-lang="footer.privacy">Privacy Policy</a>
+        <a href="terms.html" class="footer-link" data-lang="footer.terms">Terms of Use</a>
+        <a href="legal.html" class="footer-link" data-lang="footer.legal">Legal</a>
+    </div>
+</footer>
+
+</body>
+</html>

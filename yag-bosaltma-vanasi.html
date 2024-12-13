@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="yagBosaltmaVanasi.title">Yağ Boşaltma Vanaları (Drain Valves)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <script src="language.js"></script>
+    <script defer src="language_selector_functionality.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .yag-bosaltma-vanasi-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 48px;
+            gap: 48px;
+            align-items: flex-start;
+            margin-top: 90px;
+            box-sizing: border-box;
+        }
+
+        /* Galeri yapısı */
+        .yag-bosaltma-vanasi-gallery {
+            width: 790px; /* Masaüstünde sabit 790px genişlik */
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .yag-bosaltma-vanasi-main-image-wrapper {
+            width: 100%;
+            margin-bottom: 16px;
+            position: relative;
+            text-align: center;
+        }
+
+        .yag-bosaltma-vanasi-main-image {
+            max-width: 600px; /* Ana resim maks 600px */
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #D8D8D8;
+            border-radius: 12px;
+            transition: opacity 0.3s ease;
+        }
+
+        .yag-bosaltma-vanasi-thumbnails {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .yag-bosaltma-vanasi-thumbnail {
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #D8D8D8;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .yag-bosaltma-vanasi-thumbnail:hover {
+            border-color: #333;
+        }
+
+        .yag-bosaltma-vanasi-thumbnail.selected {
+            border: 3px solid #333;
+        }
+
+        .yag-bosaltma-vanasi-text-content {
+            flex: 1;
+        }
+
+        .yag-bosaltma-vanasi-title {
+            color: #000;
+            font-size: 30.43px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .yag-bosaltma-vanasi-description {
+            color: #000;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 177.994%;
+            letter-spacing: 0.3px;
+        }
+
+        .yag-bosaltma-vanasi-more-title {
+            color: #000;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 210%;
+            letter-spacing: 0.44px;
+            text-align: left;
+        }
+
+        /* Tablet ve Mobil Cihazlar İçin */
+        @media (max-width: 768px) {
+            .yag-bosaltma-vanasi-container {
+                flex-direction: column-reverse; 
+                gap: 32px;
+                padding: 32px;
+            }
+
+            .yag-bosaltma-vanasi-gallery {
+                width: 100%;
+            }
+
+            .yag-bosaltma-vanasi-thumbnail {
+                width: 80px;
+                height: 80px;
+            }
+
+            .yag-bosaltma-vanasi-main-image {
+                width: 100%; 
+                height: auto; 
+                margin: 0 auto;
+            }
+
+            .yag-bosaltma-vanasi-title {
+                font-size: 28px;
+            }
+
+            .yag-bosaltma-vanasi-description {
+                font-size: 14.5px;
+                line-height: 160%;
+            }
+
+            .yag-bosaltma-vanasi-more-title {
+                font-size: 20px;
+            }
+        }
+
+        /* Mobil Cihazlar İçin (Küçük Ekranlar) */
+        @media (max-width: 480px) {
+            .yag-bosaltma-vanasi-container {
+                flex-direction: column-reverse;
+                gap: 24px;
+                padding: 24px;
+            }
+
+            .yag-bosaltma-vanasi-thumbnail {
+                width: 60px;
+                height: 60px;
+            }
+
+            .yag-bosaltma-vanasi-main-image {
+                width: 100%; 
+                height: auto; 
+            }
+
+            .yag-bosaltma-vanasi-title {
+                font-size: 24px;
+            }
+
+            .yag-bosaltma-vanasi-description {
+                font-size: 14px;
+                line-height: 150%;
+            }
+
+            .yag-bosaltma-vanasi-more-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Sabit Navigasyon Menüsü -->
+    <header class="navbar">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.png" alt="Trafo Teknik Logo">
+          </div>
+          <button class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+          </button>
+          <nav class="menu">
+            <a href="index.html" data-lang-key="home">Ana Sayfa</a>
+            <a href="hakkimizda_multilingual.html" data-lang-key="about">Hakkımızda</a>
+            <a href="urunler_full_multilingual.html" data-lang-key="products">Ürünler</a>
+            <a href="isortakları-referanslar.html" data-lang-key="partnerships">İş Birlikleri</a>
+            <a href="isortakları-referanslar.html" data-lang-key="references">Referanslar</a>
+            <a href="iletisim_multilingual.html" data-lang-key="contact">İletişim</a>
+            <div class="language-selector">
+              <button class="lang-btn" data-lang="tr">
+                <img src="images/Flag_of_Turkey.svg.webp" alt="Türkçe">
+              </button>
+              <button class="lang-btn" data-lang="en">
+                <img src="images/Flag_of_the_United_Kingdom_(3-5).svg.png" alt="English">
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+    <div class="whatsapp-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 2000; font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+        <!-- Açılır Menü -->
+        <div class="whatsapp-menu" style="display: none; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <!-- Emirhan -->
+          <div class="whatsapp-contact" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+            <span style="font-size: 14px; margin-bottom: 5px;">1. Emirhan Arslan</span>
+            <a href="https://wa.me/905309606371?text=Merhaba%20Emirhan!" target="_blank" style="padding: 10px; background-color: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 12px; transition: background-color 0.3s ease;">Mesaj Gönder</a>
+          </div>
+          <!-- Murat -->
+          <div class="whatsapp-contact" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+            <span style="font-size: 14px; margin-bottom: 5px;">2. Murat Özen</span>
+            <a href="https://wa.me/905310812360?text=Merhaba%20Murat!" target="_blank" style="padding: 10px; background-color: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 12px; transition: background-color 0.3s ease;">Mesaj Gönder</a>
+          </div>
+        </div>
+      
+        <!-- Ana buton (ikon ve yazı) -->
+        <div class="whatsapp-icon" onclick="toggleWhatsAppMenu()" style="display: flex; align-items: center; gap: 10px; background-color: #25d366; color: white; padding: 10px 15px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); cursor: pointer; transition: all 0.3s ease;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 24px; height: 24px;" />
+          <span style="font-size: 14px;">WhatsApp İletişim</span>
+        </div>
+      </div>
+      
+    <div class="yag-bosaltma-vanasi-container">
+        <!-- Galeri -->
+        <div class="yag-bosaltma-vanasi-gallery">
+          <div class="yag-bosaltma-vanasi-main-image-wrapper">
+            <img id="yag-bosaltma-main-image" class="yag-bosaltma-vanasi-main-image" src="images/yagbosaltma (1).bmp" alt="Yağ Boşaltma Vanası">
+          </div>
+          <div class="yag-bosaltma-vanasi-thumbnails">
+            <div class="yag-bosaltma-vanasi-thumbnail selected" data-full="images/yagbosaltma (1).bmp" style="background-image: url('images/yagbosaltma (1).bmp');"></div>
+            <div class="yag-bosaltma-vanasi-thumbnail" data-full="images/yagbosaltma (2).bmp" style="background-image: url('images/yagbosaltma (2).bmp');"></div>
+          </div>
+        </div>
+
+        <!-- Yazılar -->
+        <div class="yag-bosaltma-vanasi-text-content">
+            <h1 class="yag-bosaltma-vanasi-title" data-lang="yagBosaltmaVanasi.title">
+                Yağ Boşaltma Vanaları (Drain Valves)
+            </h1>
+            <p class="yag-bosaltma-vanasi-description" data-lang="yagBosaltmaVanasi.description">
+                Flanşlı giriş, dişli çıkış.<br>
+                Bronz gövdeli vanalar ve kol, ASTMB 62'ye uygun.<br>
+                Gövde üzerinde değiştirilebilir PTFE sızdırmazlık.<br>
+                Yivli flanş için montaj contası mevcuttur.<br>
+                Vanalar sızıntıya karşı %100 test edilmiştir.
+            </p>
+            <h2 class="yag-bosaltma-vanasi-more-title" data-lang="yagBosaltmaVanasi.moreInfo">
+                Daha Fazlası İçin İletişime Geçin
+            </h2>
+        </div>
+    </div>
+    <div class="urunler-section">
+        <div class="urunler-header">
+            <h2 class="urunler-title" data-lang="urunlerSection.title">Ürünlerimize Göz Atın</h2>
+            <a href="urunler_full_multilingual.html" class="urunler-link" data-lang="urunlerSection.link">Tüm Ürünleri Gör →</a>
+        </div>
+        <div class="urunler-container">
+            <!-- Ürün 1 -->
+            <div class="urun-card">
+              <img src="images/silisli-sac.png" alt="Silisli Sac" class="urun-image">
+              <h3 class="urun-title" data-lang="urunlerSection.products.0.title">Silisli Sac</h3>
+              <p class="urun-subtitle" data-lang="urunlerSection.products.0.subtitle">(CRGO & CRNGO)</p>
+              <a href="silisli-sac.html" class="urun-button" data-lang="urunlerSection.products.0.button">Detaylı Bilgi</a>
+            </div>
+            <!-- Ürün 2 -->
+            <div class="urun-card">
+                <img src="images/hermetik-koruma-role.png" alt="Hermetik Koruma Rölesi" class="urun-image">
+                <h3 class="urun-title" data-lang="urunlerSection.products.1.title">Hermetik Koruma Rölesi</h3>
+                <p class="urun-subtitle" data-lang="urunlerSection.products.1.subtitle">(DGPT2)</p>
+                <button class="urun-button" data-lang="urunlerSection.products.1.button">Detaylı Bilgi</button>
+            </div>
+            <!-- Ürün 3 -->
+            <div class="urun-card">
+                <img src="images/porselen-izolator.png" alt="Porselen İzolatör" class="urun-image">
+                <h3 class="urun-title" data-lang="urunlerSection.products.2.title">Porselen İzolatör</h3>
+                <p class="urun-subtitle" data-lang="urunlerSection.products.2.subtitle">(Porcelain Insulator)</p>
+                <button class="urun-button" data-lang="urunlerSection.products.2.button">Detaylı Bilgi</button>
+            </div>
+            <!-- Ürün 4 -->
+            <div class="urun-card">
+                <img src="images/aluminyum-bakir-tel.png" alt="Alüminyum-Bakır Tel" class="urun-image">
+                <h3 class="urun-title" data-lang="urunlerSection.products.3.title">Alüminyum-Bakır Tel</h3>
+                <p class="urun-subtitle" data-lang="urunlerSection.products.3.subtitle">(Flat and Round Wire)</p>
+                <a href="aluminyum-bakir-tel.html" class="urun-button" data-lang="urunlerSection.products.3.button">Detaylı Bilgi</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <img src="images/logo.png" alt="Trafo Teknik Logo" class="footer-logo">
+            <p data-lang="footer.copyright">
+                Copyright © 2024 Trafo Teknik. Tüm haklar saklıdır.
+            </p>
+        </div>
+        <div class="footer-right">
+            <a href="privacy.html" class="footer-link" data-lang="footer.privacy">Privacy Policy</a>
+            <a href="terms.html" class="footer-link" data-lang="footer.terms">Terms of Use</a>
+            <a href="legal.html" class="footer-link" data-lang="footer.legal">Legal</a>
+        </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        // Menü aç/kapa fonksiyonu
+      }
+
+      function toggleWhatsAppMenu() {
+          const menu = document.querySelector('.whatsapp-menu');
+          if (menu.style.display === 'none' || menu.style.display === '') {
+              menu.style.display = 'block';
+          } else {
+              menu.style.display = 'none';
+          }
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const mainImage = document.getElementById('yag-bosaltma-main-image');
+        const thumbnails = document.querySelectorAll('.yag-bosaltma-vanasi-thumbnail');
+
+        thumbnails.forEach(function(thumbnail) {
+          thumbnail.addEventListener('click', function() {
+            thumbnails.forEach(t => t.classList.remove('selected'));
+            thumbnail.classList.add('selected');
+
+            const newSrc = thumbnail.getAttribute('data-full');
+            mainImage.style.opacity = 0;
+            setTimeout(function() {
+              mainImage.src = newSrc;
+              mainImage.style.opacity = 1;
+            }, 300);
+          });
+        });
+      });
+    </script>
+</body>
+</html>

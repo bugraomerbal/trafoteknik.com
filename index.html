@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trafo Teknik</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="language.js"></script>
+    <script defer src="language_selector_functionality.js"></script>
+    <script defer src="script.js"></script>
+
+</head>
+<body>
+    <!-- Sabit Navigasyon Menüsü -->
+   <header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="images/logo.png" alt="Trafo Teknik Logo">
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+    <nav class="menu">
+      <a href="index.html" data-lang-key="home">Ana Sayfa</a>
+      <a href="hakkimizda_multilingual.html" data-lang-key="about">Hakkımızda</a>
+      <a href="urunler_full_multilingual.html" data-lang-key="products">Ürünler</a>
+      <a href="isortakları-referanslar.html" data-lang-key="partnerships">İş Birlikleri</a>
+      <a href="isortakları-referanslar.html" data-lang-key="references">Referanslar</a>
+      <a href="iletisim_multilingual.html" data-lang-key="contact">İletişim</a>
+      <div class="language-selector">
+        <button class="lang-btn" data-lang="tr">
+          <img src="images/Flag_of_Turkey.svg.webp" alt="Türkçe">
+        </button>
+        <button class="lang-btn" data-lang="en">
+          <img src="images/Flag_of_the_United_Kingdom_(3-5).svg.png" alt="English">
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+     
+      <div class="whatsapp-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 2000; font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+        <!-- Açılır Menü -->
+        <div class="whatsapp-menu" style="display: none; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <!-- Emirhan -->
+          <div class="whatsapp-contact" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+            <span style="font-size: 14px; margin-bottom: 5px;">1. Emirhan Arslan</span>
+            <a href="https://wa.me/905309606371?text=Merhaba%20Emirhan!" target="_blank" style="padding: 10px; background-color: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 12px; transition: background-color 0.3s ease;">Mesaj Gönder</a>
+          </div>
+          <!-- Murat -->
+          <div class="whatsapp-contact" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+            <span style="font-size: 14px; margin-bottom: 5px;">2. Murat Özen</span>
+            <a href="https://wa.me/905310812360?text=Merhaba%20Murat!" target="_blank" style="padding: 10px; background-color: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-size: 12px; transition: background-color 0.3s ease;">Mesaj Gönder</a>
+          </div>
+        </div>
+      
+        <!-- Ana buton (ikon ve yazı) -->
+        <div class="whatsapp-icon" onclick="toggleWhatsAppMenu()" style="display: flex; align-items: center; gap: 10px; background-color: #25d366; color: white; padding: 10px 15px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); cursor: pointer; transition: all 0.3s ease;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 24px; height: 24px;" />
+          <span style="font-size: 14px;">WhatsApp İletişim</span>
+        </div>
+      </div>
+           
+
+    </div>
+    <div class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h2>Trafo Teknik</h2>
+                <h1 data-lang-key="slogan">Güçlü Çözümler, Kaliteli Aksesuarlar</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <div class="about-content">
+          <!-- Sol Taraf: Logo Kutusu -->
+          <div class="about-logo">
+            <img src="images/logo-placeholde.png" alt="Trafo Teknik Logo" />
+          </div>
+      
+          <!-- Sağ Taraf: Yazı ve Buton -->
+          <div class="about-text">
+            <div class="about-header">
+              <h2 class="main-title" data-lang-key="whoare" >Biz Kimiz?</h2>
+            </div>
+            <p data-lang-key="experience_text">
+              18 yıllık sektör tecrübemiz, enerji sektöründe güvenilir bir partner olma misyonuyla yola çıkmıştır. Trafo aksesuarları alanında sunduğumuz geniş ürün yelpazesi ile hem yerel hem de uluslararası pazarlarda tercih edilen bir iş ortağı olmayı başardık.
+            </p>
+            <a href="hakkimizda_multilingual.html" class="read-more-button" data-lang-key="read_more">Devamını Oku →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="neden-trafo-teknik">
+        <div class="container">
+            <img src="images/ek-hakkında.png" alt="Trafo Teknik Görseli" class="neden-gorsel">
+            <div class="neden-yazi">
+                <h1 class="neden-title" data-lang-key="why_trafo">Neden Trafo Teknik</h1>
+                <p class="neden-paragraph">
+                    <span class="highlight" data-lang-key="wide_range">Geniş Ürün Yelpazesi:</span data-lang-key="wide_range_text> Trafo aksesuarları, hammadde ve silisli sac ile enerji sistemlerinizin her türlü ihtiyacını karşılıyoruz.
+                    <br>
+                    <span class="highlight" data-lang-key="quality_and_trust">Kalite ve Güven:</span data-lang-key="quality_and_trust_text"> Ürünlerimiz uluslararası standartlara uygun olarak üretilmektedir.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="urunler-section">
+      <div class="urunler-header">
+          <h2 class="urunler-title" data-lang-key="view_products">Ürünlerimize Göz Atın</h2>
+          <a href="urunler_full_multilingual.html" class="urunler-link" data-lang-key="view_all_products">Tüm Ürünleri Gör →</a>
+      </div>
+      <div class="urunler-container">
+          <!-- Ürün 1 -->
+          <div class="urun-card">
+            <img src="images/silisli-sac.png" alt="Silisli Sac" class="urun-image">
+            <h3 class="urun-title">Silisli Sac</h3>
+            <p class="urun-subtitle">(CRGO & CRNGO)</p>
+            <a href="silisli-sac.html" class="urun-button" data-lang-key="detailed_info">Detaylı Bilgi</a>
+          </div>
+          <!-- Ürün 2 -->
+          <div class="urun-card">
+            <img src="images/hermetik-koruma-role.png" alt="Hermetik Koruma Rölesi" class="urun-image">
+            <h3 class="urun-title" data-lang-key="urunler_hermetik_koruma_role">Hermetik Koruma Rölesi</h3>
+            <p class="urun-subtitle" data-lang-key="urunler_dgpt2">(DGPT2)</p>
+            <a href="hermetik-koruma-role.html" class="urun-button" data-lang-key="urunler_detailed_info">Detaylı Bilgi</a>
+          </div>
+          <!-- Ürün 3 -->
+          <div class="urun-card">
+              <img src="images/porselen-izolator.png" alt="Porselen İzolatör" class="urun-image">
+              <h3 class="urun-title">Porselen İzolatör</h3>
+              <p class="urun-subtitle">(Porcelain Insulator)</p>
+             <a href="porselen-izolator.html"><button class="urun-button" data-lang-key="detailed_info">Detaylı Bilgi</button></a>
+          </div>
+          <!-- Ürün 4 -->
+          <div class="urun-card">
+              <img src="images/aluminyum-bakir-tel.png" alt="Bakır Tel" class="urun-image">
+              <h3 class="urun-title">Aluminyum Bakır Tel</h3>
+              <p class="urun-subtitle">(Copper Wire)</p>
+             <a href="aluminyum-bakir-tel.html"><button class="urun-button" data-lang-key="detailed_info">Detaylı Bilgi</button></a> 
+          </div>
+      </div>
+  </div>
+
+  <div class="ortaklar-referanslar">
+    <div class="ortaklar-container">
+        <h2 class="ortaklar-title" data-lang-key="our_partners">İŞ ORTAKLARIMIZ</h2>
+        <div class="logos">
+            <!-- İş Ortaklarının Logoları -->
+            <a href="http://www.viatin.com/" target="_blank">
+            <div class="logo-wrapper">
+                <img  src="images/vıat.png" alt="Viat" class="logo">
+                <p class="logo-caption">Viat</p></a>
+                
+            </div>
+            <a href="http://www.guochuangdl.com" target="_blank">
+            <div class="logo-wrapper">
+                <img src="images/guıchuangdl.png" alt="Guochuang (TBEA Group)" class="logo">
+                <p class="logo-caption">Guochuang (TBEA Group)</p></a>
+ </div>
+        </div>
+        <h2 class="referans-title" data-lang-key="our_references">REFERANSLARIMIZ</h2>
+        <div class="logos">
+            <!-- Referans Logoları -->
+            <div class="logo-wrapper">
+                <img src="images/meksan.bmp" alt="meksan" class="logo">
+            </div>
+            <div class="logo-wrapper">
+              <img src="images/eren-transformet.png" alt="eren" class="logo">
+          </div>
+          <div class="logo-wrapper">
+            <img src="images/altinsoy.png" alt="altınsoy" class="logo">
+        </div>
+            <div class="logo-wrapper">
+                <img src="images/gapsan.webp" alt="gapsan" class="logo">
+            </div>
+            <div class="logo-wrapper">
+                <img src="images/electra.png" alt="Electra" class="logo">
+            </div>
+           
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="iletisim-section">
+  <h2 class="iletisim-title" data-lang-key="contact_us">İLETİŞİM</h2>
+  <p class="iletisim-address">Adres: Meclis Mahallesi Derviş Sokak Fuat Özal No:38 <br> Sancaktepe / İSTANBUL</p>
+  <div class="iletisim-container">
+      <!-- Kişi 1 -->
+      <div class="iletisim-card">
+          <div class="iletisim-overlay"></div>
+          <img src="images/person1.png" alt="Emirhan Arslan" class="iletisim-photo">
+          <div class="iletisim-info">
+              <h3 class="iletisim-name">Emirhan <span class="bold">ARSLAN</span></h3>
+              <div class="iletisim-contact">
+                  <p><img src="images/phone-icon.png" alt="Telefon" class="icon"> +90 530 960 6371</p>
+                  <p><img src="images/mail-icon.png" alt="Mail" class="icon"> emirhan.arslan@trafoteknik.com</p>
+              </div>
+          </div>
+      </div>
+      <!-- Kişi 2 -->
+      <div class="iletisim-card">
+          <div class="iletisim-overlay"></div>
+          <img src="images/person2.png" alt="Murat Özen" class="iletisim-photo">
+          <div class="iletisim-info">
+              <h3 class="iletisim-name">Murat <span class="bold">ÖZEN</span></h3>
+              <div class="iletisim-contact">
+                  <p><img src="images/phone-icon.png" alt="Telefon" class="icon"> +90 531 081 2360</p>
+                  <p><img src="images/mail-icon.png" alt="Mail" class="icon"> murat.ozen@trafoteknik.com</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-left">
+        <img src="images/logo.png" alt="Trafo Teknik Logo" class="footer-logo">
+        <p class="footer-copyright" data-lang="footer.copyright">
+            Copyright © 2024 Trafo Teknik. Tüm haklar saklıdır.
+        </p>
+    </div>
+    <div class="footer-right">
+        <a href="privacy.html" class="footer-link" data-lang="footer.privacy">Privacy Policy</a>
+        <a href="terms.html" class="footer-link" data-lang="footer.terms">Terms of Use</a>
+        <a href="legal.html" class="footer-link" data-lang="footer.legal">Legal</a>
+    </div>
+</footer>
+    
+</body>
+</html>

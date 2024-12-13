@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="silisliSac.title">Silisli Sac (Tanecikleri yönlendirilmiş veya yönlendirilmemiş – CRGO – CRNGO)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <script src="language.js"></script>
+    <script src="gallery.js"></script>
+    <script defer src="language_selector_functionality.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .silisli-sac-container {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            padding: 48px; /* Sol kenardan boşluk */
+            box-sizing: border-box;
+        }
+
+        .silisli-sac-gallery-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 48px; /* Fotoğraf ve yazı arası boşluk */
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .silisli-sac-main-image {
+            text-align: left; 
+        }
+
+        .silisli-sac-main-image img {
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            border: 1px solid #D8D8D8;
+            border-radius: 12px;
+            transition: opacity 0.3s ease;
+            display: block;
+            margin: 0; 
+        }
+
+        .silisli-sac-thumbnail-wrapper {
+            display: flex;
+            flex-wrap: nowrap; 
+            gap: 12px;
+            overflow-x: auto; 
+        }
+
+        .silisli-sac-thumbnail-frame {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #D8D8D8;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color 0.3s;
+            background-color: #fff;
+            flex-shrink: 0;
+        }
+
+        .silisli-sac-thumbnail-frame:hover {
+            border-color: #333;
+        }
+
+        .silisli-sac-thumbnail {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .silisli-sac-text-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-width: 300px;
+        }
+
+        .silisli-sac-title {
+            font-size: 30.43px;
+            font-weight: 700;
+            line-height: normal;
+            color: #000;
+        }
+
+        .silisli-sac-subtitle {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .silisli-sac-description {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 177.994%;
+            letter-spacing: 0.3px;
+            color: #000;
+        }
+
+        .silisli-sac-spec-title,
+        .silisli-sac-advantages-title,
+        .silisli-sac-usage-title,
+        .silisli-sac-conclusion-title {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 210%;
+            letter-spacing: 0.44px;
+            color: #000;
+        }
+
+        .silisli-sac-spec-list,
+        .silisli-sac-advantages-list,
+        .silisli-sac-usage-list {
+            padding-left: 20px;
+            list-style: disc;
+        }
+
+        .silisli-sac-advantages-heading {
+            font-weight: bold;
+        }
+
+        .silisli-sac-conclusion {
+            font-size: 15px;
+            color: #000;
+            line-height: 177.994%;
+            letter-spacing: 0.3px;
+        }
+
+        .silisli-sac-advantages {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 100%; /* Tüm sayfa genişliğini kullansın */
+        }
+
+        @media (max-width: 768px) {
+            .silisli-sac-container {
+                gap: 32px;
+                padding: 32px;
+            }
+
+            .silisli-sac-gallery-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .silisli-sac-thumbnail-frame {
+                width: 80px;
+                height: 80px;
+            }
+
+            .silisli-sac-title {
+                font-size: 28px;
+            }
+
+            .silisli-sac-description {
+                font-size: 14.5px;
+                line-height: 160%;
+            }
+
+            .silisli-sac-spec-title,
+            .silisli-sac-usage-title,
+            .silisli-sac-conclusion-title {
+                font-size: 20px;
+            }
+
+            .silisli-sac-text-content {
+                width: 100%;
+                max-width: 700px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .silisli-sac-container {
+                gap: 24px;
+                padding: 24px;
+            }
+
+            .silisli-sac-thumbnail-frame {
+                width: 60px;
+                height: 60px;
+            }
+
+            .silisli-sac-title {
+                font-size: 24px;
+            }
+
+            .silisli-sac-description {
+                font-size: 14px;
+                line-height: 150%;
+            }
+
+            .silisli-sac-spec-title,
+            .silisli-sac-usage-title,
+            .silisli-sac-conclusion-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <script>
+        function changeImage(imageUrl) {
+            const displayedImage = document.getElementById('displayed-image');
+            displayedImage.style.opacity = 0;
+            setTimeout(() => {
+                displayedImage.src = imageUrl;
+                displayedImage.style.opacity = 1;
+            }, 300);
+        }
+    </script>
+</head>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'tr', includedLanguages: 'en,fr,de', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+    <!-- Sabit Navigasyon Menüsü -->
+    <header class="navbar">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.png" alt="Trafo Teknik Logo">
+          </div>
+          <button class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+          </button>
+          <nav class="menu">
+            <a href="index.html" data-lang-key="home">Ana Sayfa</a>
+            <a href="hakkimizda_multilingual.html" data-lang-key="about">Hakkımızda</a>
+            <a href="urunler_full_multilingual.html" data-lang-key="products">Ürünler</a>
+            <a href="isortakları-referanslar.html" data-lang-key="partnerships">İş Birlikleri</a>
+            <a href="isortakları-referanslar.html" data-lang-key="references">Referanslar</a>
+            <a href="iletisim_multilingual.html" data-lang-key="contact">İletişim</a>
+            <div class="language-selector">
+              <button class="lang-btn" data-lang="tr">
+                <img src="images/Flag_of_Turkey.svg.webp" alt="Türkçe">
+              </button>
+              <button class="lang-btn" data-lang="en">
+                <img src="images/Flag_of_the_United_Kingdom_(3-5).svg.png" alt="English">
+              </button>
+            </div>
+          </nav>
+        </div>
+    </header>
+    <div class="whatsapp-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 2000; font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+        <!-- WhatsApp kodları aynı -->
+    </div>
+      
+    <div class="silisli-sac-container">
+        <!-- Galeri ve Yazılar -->
+        <div class="silisli-sac-gallery-container">
+            <div class="silisli-sac-main-image">
+                <img src="images/silisli-sac.png" alt="Silisli Sac" id="displayed-image">
+            </div>
+
+            <div class="silisli-sac-thumbnail-wrapper">
+                <div class="silisli-sac-thumbnail-frame" onclick="changeImage('images/silisli-sac.png')">
+                    <div class="silisli-sac-thumbnail" style="background-image: url('images/silisli-sac.png');"></div>
+                </div>
+                <div class="silisli-sac-thumbnail-frame" onclick="changeImage('images/silisli-sac2.png')">
+                    <div class="silisli-sac-thumbnail" style="background-image: url('images/silisli-sac2.png');"></div>
+                </div>
+                <div class="silisli-sac-thumbnail-frame" onclick="changeImage('images/silisli-sac3.png')">
+                    <div class="silisli-sac-thumbnail" style="background-image: url('images/silisli-sac3.png');"></div>
+                </div>
+                <div class="silisli-sac-thumbnail-frame" onclick="changeImage('images/silisli-sac4.png')">
+                    <div class="silisli-sac-thumbnail" style="background-image: url('images/silisli-sac4.png');"></div>
+                </div>
+            </div>
+
+            <!-- Yazılar -->
+            <div class="silisli-sac-text-content">
+                <h1 class="silisli-sac-title" data-lang="silisliSac.title">
+                    Silisli Sac (Tanecikleri yönlendirilmiş veya yönlendirilmemişi – CRGO – CRNGO)
+                </h1>
+                <h2 class="silisli-sac-subtitle" data-lang="silisliSac.subtitle">TRAFO TEKNİK</h2>
+                <p class="silisli-sac-description" data-lang="silisliSac.description">
+                    Soğuk haddelenmiş tanecikleri yönlendirilmiş silisli sac, yüksek performans gerektiren endüstriyel uygulamalar için tasarlanmış özel bir malzemedir. Silis içeriği sayesinde mükemmel manyetik özellikler sunarken, soğuk haddeleme işlemi ile elde edilen yüzey kalitesi ve dayanıklılığı ile dikkat çeker.
+                </p>
+                <h3 class="silisli-sac-spec-title" data-lang="silisliSac.technicalSpecsTitle">Teknik Özellikler</h3>
+                <ul class="silisli-sac-spec-list">
+                    <li data-lang="silisliSac.specs.material">Malzeme Türü: Yönlendirilmiş silisli sac</li>
+                    <li data-lang="silisliSac.specs.process">İşlem: Soğuk haddeleme</li>
+                    <li data-lang="silisliSac.specs.siliconContent">Silis İçeriği: Yüksek oranda silis, manyetik özellikleri artırır.</li>
+                    <li data-lang="silisliSac.specs.surfaceQuality">Yüzey Kalitesi: Düzgün ve pürüzsüz yüzey, düşük kayıplar ve yüksek verim sağlar.</li>
+                    <li data-lang="silisliSac.specs.magneticPerformance">Manyetik Alan Performansı: Yönlendirilmiş yapı, manyetik alanın etkin kullanımını sağlar.</li>
+                    <li data-lang="silisliSac.specs.thickness">Kalınlık: İhtiyaçlara göre özelleştirilebilir (örneğin, 0.18 mm – 0.30 mm arası).</li>
+                    <li data-lang="silisliSac.specs.losses">Kayıplar: İhtiyaçlara göre özelleştirilebilir (örneğin, 0.65 w/kg – 1.40 w/kg arası).</li>
+                    <li data-lang="silisliSac.specs.varieties">Çeşitler: Ana rulo, Dilinmiş Sac, Laminasyon ve Kesili-Dizili Nüve bunların hepsi.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Avantajlar ve Sonuç -->
+        <div class="silisli-sac-advantages">
+            <h3 class="silisli-sac-advantages-title" data-lang="silisliSac.advantagesTitle">Avantajlar:</h3>
+            <ul class="silisli-sac-advantages-list">
+                <li>
+                    <span class="silisli-sac-advantages-heading" data-lang="silisliSac.advantages.efficiency.title">Yüksek Verimlilik:</span>
+                    <span class="silisli-sac-advantages-text" data-lang="silisliSac.advantages.efficiency.text">Yönlendirilmiş tanecik yapısı, manyetik akının daha etkin bir şekilde yönlendirilmesine olanak tanır, bu da enerji kayıplarını azaltır.</span>
+                </li>
+                <li>
+                    <span class="silisli-sac-advantages-heading" data-lang="silisliSac.advantages.durability.title">Gelişmiş Dayanıklılık:</span>
+                    <span class="silisli-sac-advantages-text" data-lang="silisliSac.advantages.durability.text">Soğuk haddeleme işlemi, malzemenin dayanıklılığını artırır ve uzun ömürlü kullanım sağlar.</span>
+                </li>
+                <li>
+                    <span class="silisli-sac-advantages-heading" data-lang="silisliSac.advantages.flexibility.title">Esnek Uygulama Alanları:</span>
+                    <span class="silisli-sac-advantages-text" data-lang="silisliSac.advantages.flexibility.text">Elektrik motorları, trafolar ve çeşitli enerji dönüşüm sistemleri gibi birçok alanda güvenle kullanılabilir.</span>
+                </li>
+                <li>
+                    <span class="silisli-sac-advantages-heading" data-lang="silisliSac.advantages.lowNoise.title">Düşük Gürültü Seviyesi:</span>
+                    <span class="silisli-sac-advantages-text" data-lang="silisliSac.advantages.lowNoise.text">Yüksek performansı ile birlikte daha düşük gürültü seviyeleri sunar.</span>
+                </li>
+            </ul>
+
+            <h3 class="silisli-sac-usage-title" data-lang="silisliSac.usageTitle">Kullanım Alanları:</h3>
+            <ul class="silisli-sac-usage-list">
+                <li data-lang="silisliSac.usage.motors">Elektrik motorları</li>
+                <li data-lang="silisliSac.usage.transformers">Transformatörler</li>
+                <li data-lang="silisliSac.usage.highFrequency">Yüksek frekanslı uygulamalar</li>
+                <li data-lang="silisliSac.usage.powerElectronics">Güç elektronik sistemleri</li>
+            </ul>
+
+            <h3 class="silisli-sac-conclusion-title" data-lang="silisliSac.conclusionTitle">Sonuç:</h3>
+            <p class="silisli-sac-conclusion" data-lang="silisliSac.conclusion">
+                Soğuk haddelenmiş yönlendirilmiş silisli sac, enerji verimliliği ve dayanıklılığı ile endüstriyel uygulamalar için ideal bir seçimdir. Yüksek kaliteli malzeme ve üstün performans arayan işletmeler için mükemmel bir çözümdür. Daha fazla bilgi ve sipariş için bizimle iletişime geçin!
+            </p>
+        </div>
+    </div>
+
+    <div class="urunler-section">
+        <div class="urunler-header">
+            <h2 class="urunler-title" data-lang="urunlerSection.title">Ürünlerimize Göz Atın</h2>
+            <a href="urunler_full_multilingual.html" class="urunler-link" data-lang="urunlerSection.link">Tüm Ürünleri Gör →</a>
+        </div>
+        <div class="urunler-container">
+            <!-- Ürün 1 -->
+            <div class="urun-card">
+              <img src="images/silisli-sac.png" alt="Silisli Sac" class="urun-image">
+              <h3 class="urun-title" data-lang="urunlerSection.products.0.title">Silisli Sac</h3>
+              <p class="urun-subtitle" data-lang="urunlerSection.products.0.subtitle">(CRGO & CRNGO)</p>
+              <a href="silisli-sac.html" class="urun-button" data-lang="urunlerSection.products.0.button">Detaylı Bilgi</a>
+            </div>
+            <!-- Ürün 2 -->
+            <div class="urun-card">
+                <img src="images/hermetik-koruma-role.png" alt="Hermetik Koruma Rölesi" class="urun-image">
+                <h3 class="urun-title" data-lang="urunlerSection.products.1.title">Hermetik Koruma Rölesi</h3>
+                <p class="urun-subtitle" data-lang="urunlerSection.products.1.subtitle">(DGPT2)</p>
+                <button class="urun-button" data-lang="urunlerSection.products.1.button">Detaylı Bilgi</button>
+            </div>
+            <!-- Ürün 3 -->
+            <div class="urun-card">
+                <img src="images/porselen-izolator.png" alt="Porselen İzolatör" class="urun-image">
+                <h3 class="urun-title" data-lang="urunlerSection.products.2.title">Porselen İzolatör</h3>
+                <p class="urun-subtitle" data-lang="urunlerSection.products.2.subtitle">(Porcelain Insulator)</p>
+                <button class="urun-button" data-lang="urunlerSection.products.2.button">Detaylı Bilgi</button>
+            </div>
+            <!-- Ürün 4 -->
+            <div class="urun-card">
+                <img src="images/aluminyum-bakir-tel.png" alt="Bakır Tel" class="urun-image">
+                <h3 class="urun-title" data-lang="urunlerSection.products.3.title">Bakır Tel</h3>
+                <p class="urun-subtitle" data-lang="urunlerSection.products.3.subtitle">(Copper Wire)</p>
+                <button class="urun-button" data-lang="urunlerSection.products.3.button">Detaylı Bilgi</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <img src="images/logo.png" alt="Trafo Teknik Logo" class="footer-logo">
+            <p class="footer-text" data-lang="footer.text">
+                © 2024 Trafo Teknik. Tüm hakları saklıdır.
+            </p>
+        </div>
+        <div class="footer-right">
+            <a href="privacy.html" class="footer-link" data-lang="footer.privacy">Privacy Policy</a>
+            <a href="terms.html" class="footer-link" data-lang="footer.terms">Terms of Use</a>
+            <a href="legal.html" class="footer-link" data-lang="footer.legal">Legal</a>
+        </div>
+    </footer>
+</body>
+</html>
